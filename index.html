@@ -1,398 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabakar Amméappin - AI & Data Professional</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8">
+  <title>Prabakar Amméappin | Data Platforms & AI Performance Leader</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:700" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #1a1a1a 0%, #232526 40%, #FF6B00 100%);
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #fff;
+      margin: 0;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(42,44,54,0.92);
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+      box-shadow: 0 6px 32px #1115;
+    }
+    header h1 {
+      color: #FF6B00;
+      margin: 0;
+      font-size: 2.6rem;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2px;
+    }
+    header h2 {
+      color: #68d3e5;
+      font-size: 1.3rem;
+      margin: 0.5rem 0 0 0;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    main {
+      max-width: 920px;
+      margin: 2rem auto;
+      background: rgba(28,37,44,0.93);
+      border-radius: 12px;
+      box-shadow: 0 10px 32px #2228;
+      padding: 2.5rem 2rem;
+    }
+    section {
+      margin-bottom: 2.2rem;
+      border-left: 6px solid #FF6B00;
+      padding-left: 1.3rem;
+      border-radius: 7px;
+      background: rgba(30,33,38,0.76);
+      box-shadow: 0 3px 18px #181d26a3;
+      transition: box-shadow 0.2s;
+    }
+    section h3 {
+      color: #FF6B00;
+      margin-top: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    /* Experience Section */
+    .exp-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 2.2rem;
+      background: rgba(42,50,54,0.25);
+      padding: 1.2rem;
+      border-radius: 9px;
+      box-shadow: 0 2px 9px #181d2627;
+    }
+    .company-logo-box {
+      min-width: 56px;
+      min-height: 56px;
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .company-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #fff;
+      display: block;
+      transition: filter 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px #3333;
+    }
+    .rotate {
+      animation: rotateLogo 3s linear infinite;
+    }
+    @keyframes rotateLogo {
+      from {transform: rotate(0deg);}
+      to   {transform: rotate(360deg);}
+    }
+    .exp-meta { color: #fafafa; opacity: 0.95; font-size: 1rem; }
+    .exp-title { font-weight: bold; color: #ebfaa9; font-size: 1.09rem;}
+    .exp-company { font-weight: 700; color: #68d3e5;}
+    .exp-details {margin-top: 0.5rem;}
+    /* Skills/Certs */
+    .skills, .certs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+    .chip {
+      display: inline-block;
+      background: linear-gradient(90deg,#232526 40%, #FF6B00 100%);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 50px; 
+      padding: 0.6em 1.3em;
+      font-size: 1.02em;
+      margin-bottom: 0.5em;
+      box-shadow: 0 2px 8px #181d26a3;
+    }
+    /* Contact */
+    .contact-list { list-style: none; padding: 0; }
+    .contact-list li { margin: 0.5em 0;}
+    .contact-link {
+      color: #FF6B00;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: #68d3e5;}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #FF6B00 0%, #1A1A1A 25%, #2E5984 50%, #FF6B00 75%, #1A1A1A 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            min-height: 100vh;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            background: rgba(26, 26, 26, 0.9);
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(255, 107, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 107, 0, 0.2);
-        }
-
-        .header h1 {
-            color: #FF6B00;
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            background: linear-gradient(45deg, #FF6B00, #FFB366);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .header p {
-            color: #fff;
-            font-size: 1.4em;
-            font-weight: 300;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            margin-bottom: 30px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            backdrop-filter: blur(5px);
-            border-left: 5px solid #FF6B00;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.2);
-        }
-
-        .section h2 {
-            color: #1A1A1A;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #FF6B00;
-            padding-bottom: 10px;
-            position: relative;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, #FF6B00, #FFB366);
-            border-radius: 2px;
-        }
-
-        .job, .education-item, .cert-item {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: linear-gradient(135deg, rgba(255, 107, 0, 0.05), rgba(46, 89, 132, 0.05));
-            border-radius: 10px;
-            border-left: 4px solid #2E5984;
-        }
-
-        .job h3, .education-item h3, .cert-item h3 {
-            color: #2E5984;
-            font-size: 1.4em;
-            margin-bottom: 5px;
-        }
-
-        .job .company, .education-item .school {
-            color: #FF6B00;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .job .date, .education-item .date, .cert-item .date {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .skill-category {
-            background: linear-gradient(135deg, #2E5984, #4A90B8);
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: scale(1.05);
-        }
-
-        .skill-category h4 {
-            margin-bottom: 15px;
-            font-size: 1.2em;
-            color: #FFB366;
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 5px 0;
-            padding: 8px;
-            border-radius: 5px;
-            font-size: 0.9em;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #1A1A1A, #2E5984);
-            color: white;
-            text-align: center;
-            border-left: 5px solid #FFB366;
-        }
-
-        .contact h2 {
-            color: #FFB366;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-item {
-            background: rgba(255, 107, 0, 0.1);
-            padding: 15px 25px;
-            border-radius: 10px;
-            border: 2px solid #FF6B00;
-            transition: background 0.3s ease;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 107, 0, 0.2);
-        }
-
-        .ai-decoration {
-            position: fixed;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg, rgba(255, 107, 0, 0.1), rgba(46, 89, 132, 0.1));
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .ai-decoration:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .ai-decoration:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .ai-decoration:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5em;
-            }
-            
-            .section {
-                padding: 20px;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    /* Responsive */
+    @media (max-width:700px) {
+      main {padding: 1rem;}
+      .exp-entry { flex-direction: column; gap: 0.8rem;}
+      .company-logo-box {align-self: center;}
+    }
+  </style>
 </head>
 <body>
-    <div class="ai-decoration"></div>
-    <div class="ai-decoration"></div>
-    <div class="ai-decoration"></div>
-
-    <div class="container">
-        <div class="header">
-            <h1>Prabakar</h1>
-            <p>AI & Data Engineering Professional</p>
-        </div>
-
-        <div class="section">
-            <h2>Professional Summary</h2>
-            <p>Experienced AI and Data Engineering professional with expertise in building scalable data pipelines, implementing machine learning solutions, and leveraging cloud platforms like Databricks for advanced analytics. Passionate about transforming raw data into actionable insights and driving business value through innovative AI solutions.</p>
-        </div>
-
-        <div class="section">
-            <h2>Work Experience</h2>
-            
-            <div class="job">
-                <h3>Senior Data Engineer</h3>
-                <div class="company">Tech Solutions Inc.</div>
-                <div class="date">January 2022 - Present</div>
-                <ul>
-                    <li>Designed and implemented ETL pipelines using Databricks and Apache Spark</li>
-                    <li>Built machine learning models for predictive analytics and customer segmentation</li>
-                    <li>Optimized data processing workflows, reducing execution time by 40%</li>
-                    <li>Collaborated with cross-functional teams to deliver data-driven solutions</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Data Analyst</h3>
-                <div class="company">Analytics Corp</div>
-                <div class="date">June 2020 - December 2021</div>
-                <ul>
-                    <li>Developed dashboards and reports using Python, SQL, and visualization tools</li>
-                    <li>Performed statistical analysis and A/B testing for product optimization</li>
-                    <li>Created automated reporting systems saving 20+ hours weekly</li>
-                    <li>Mentored junior analysts in data analysis best practices</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Education</h2>
-            
-            <div class="education-item">
-                <h3>Master of Science in Data Science</h3>
-                <div class="school">University of Technology</div>
-                <div class="date">2018 - 2020</div>
-                <p>Specialized in Machine Learning, Statistical Analysis, and Big Data Technologies</p>
-            </div>
-
-            <div class="education-item">
-                <h3>Bachelor of Engineering in Computer Science</h3>
-                <div class="school">State University</div>
-                <div class="date">2014 - 2018</div>
-                <p>Focus on Software Engineering and Database Systems</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Certifications</h2>
-            
-            <div class="cert-item">
-                <h3>Databricks Certified Data Engineer Professional</h3>
-                <div class="date">2023</div>
-            </div>
-
-            <div class="cert-item">
-                <h3>AWS Certified Solutions Architect</h3>
-                <div class="date">2022</div>
-            </div>
-
-            <div class="cert-item">
-                <h3>Google Cloud Professional Data Engineer</h3>
-                <div class="date">2021</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Data Engineering</h4>
-                    <ul class="skill-list">
-                        <li>Apache Spark</li>
-                        <li>Databricks</li>
-                        <li>ETL/ELT Pipelines</li>
-                        <li>Data Modeling</li>
-                        <li>Delta Lake</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Programming</h4>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>Scala</li>
-                        <li>R</li>
-                        <li>Java</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Machine Learning</h4>
-                    <ul class="skill-list">
-                        <li>Scikit-learn</li>
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>MLflow</li>
-                        <li>AutoML</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h4>Cloud Platforms</h4>
-                    <ul class="skill-list">
-                        <li>AWS</li>
-                        <li>Azure</li>
-                        <li>Google Cloud</li>
-                        <li>Databricks</li>
-                        <li>Snowflake</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="section contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <strong>Email:</strong><br>
-                    prabakar@example.com
-                </div>
-                <div class="contact-item">
-                    <strong>LinkedIn:</strong><br>
-                    /in/prabakar
-                </div>
-                <div class="contact-item">
-                    <strong>GitHub:</strong><br>
-                    github.com/prabakar2610
-                </div>
-                <div class="contact-item">
-                    <strong>Location:</strong><br>
-                    Tech City, TC
-                </div>
-            </div>
-        </div>
+  <header>
+    <h1>Prabakar Amméappin</h1>
+    <h2>Data Platforms & AI Performance Leader<br/>
+    Staff Technical Solutions Engineer @ Databricks</h2>
+    <div style="color:#d9ecff;font-weight:400;margin-top:0.7rem">
+      Bengaluru, Karnataka, India
+      &nbsp; | &nbsp;
+      <a class="contact-link" href="https://linkedin.com/in/prabakarammeappin" target="_blank">LinkedIn</a>
     </div>
+  </header>
+  <main>
+    <section>
+      <h3>Professional Summary</h3>
+      <p>
+        Staff Technical Solutions Engineer and leader in data platforms and AI performance at Databricks.<br>
+        I specialize in technical leadership for Spark/Lakehouse architectures, compute optimization, and AI solution scaling. Trusted advisor in technical architecture, team enablement, and enterprise customer success across EMEA & India. Experienced in transforming complex data challenges into scalable, high-performance platforms in multi-cloud (AWS, Azure) environments. Passionate about building resilient, data-driven AI solutions and mentoring high-impact teams.
+      </p>
+    </section>
+
+    <section>
+      <h3>Work Experience</h3>
+      <!-- Databricks -->
+      <div class="exp-entry" id="exp-databricks">
+        <div class="company-logo-box">
+          <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Databricks_Logo.png" alt="Databricks">
+        </div>
+        <div>
+          <div class="exp-title">Staff Technical Solutions Engineer</div>
+          <div class="exp-company">Databricks</div>
+          <div class="exp-meta">Jun 2025 – Present • Bengaluru, India</div>
+          <div class="exp-details">
+            <ul>
+              <li>Lead cross-functional teams to solve enterprise Data+AI challenges at scale.</li>
+              <li>Spearheaded compute optimization, platform reliability, and customer technical enablement in multi-cloud (AWS/Azure) Lakehouse solutions.</li>
+              <li>Mentored engineers and delivered technical workshops across regions.</li>
+              <li>Advanced Spark performance tuning, Lakehouse architecture & internal best practices.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- CSS Corp -->
+      <div class="exp-entry" id="exp-css">
+        <div class="company-logo-box">
+          <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a2/CSS_Corp_logo.png" alt="CSS Corp">
+        </div>
+        <div>
+          <div class="exp-title">Systems Specialist - TSE</div>
+          <div class="exp-company">CSS Corp</div>
+          <div class="exp-meta">Jun 2016 – Nov 2019 • Bengaluru, India</div>
+          <div class="exp-details">
+            <ul>
+              <li>Technical support for cloud-based NAS appliances (Panzura, FreeBSD+ZFS).</li>
+              <li>Troubleshot global file locking and distributed cloud networking issues.</li>
+              <li>Drove cross-team ticket resolutions for mission-critical infrastructure.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Teradata -->
+      <div class="exp-entry" id="exp-teradata">
+        <div class="company-logo-box">
+          <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Teradata_logo.png" alt="Teradata">
+        </div>
+        <div>
+          <div class="exp-title">Product Support Engineer</div>
+          <div class="exp-company">Teradata</div>
+          <div class="exp-meta">Apr 2013 – Jun 2016 • Hyderabad, India</div>
+          <div class="exp-details">
+            <ul>
+              <li>Hardware analyst: storage networks (NetApp/DotHill), servers, and networking.</li>
+              <li>Diagnosed multi-vendor SAN/NAS hardware issues (Dell, Intel, Mellanox).</li>
+              <li>Provided enterprise-grade support for Fortune 100 clients.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- NTT DATA Americas -->
+      <div class="exp-entry" id="exp-ntt">
+        <div class="company-logo-box">
+          <img class="company-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/53/NTT_Data_logo.svg" alt="NTT DATA">
+        </div>
+        <div>
+          <div class="exp-title">Team Lead</div>
+          <div class="exp-company">NTT DATA Americas</div>
+          <div class="exp-meta">Apr 2009 – Apr 2013 • Bengaluru, India</div>
+          <div class="exp-details">
+            <ul>
+              <li>Consultant Technology UNIX/STORAGE (Morgan Stanley account).</li>
+              <li>Led a 12-member team; handled major production changes, ITIL/Incident/Change Management.</li>
+              <li>Expert in NAS/SAN, Veritas Cluster, volume manager, Linux server deployments.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- System Administrator -->
+      <div class="exp-entry" id="exp-sysadmin">
+        <div class="company-logo-box">
+          <img class="company-logo" src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-system-administrator-computer-science-flatart-icons-outline-flatarticons.png" alt="System Admin">
+        </div>
+        <div>
+          <div class="exp-title">System Administrator</div>
+          <div class="exp-company">Confidential (On-site)</div>
+          <div class="exp-meta">Sep 2007 – Feb 2009 • Pondicherry, India</div>
+          <div class="exp-details">
+            <ul>
+              <li>Managed Windows servers, networks, and computer infrastructure for enterprise users.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Education</h3>
+      <ul>
+        <li><b>Bachelor of Technology, Electrical & Electronic Engineering</b>, Pondicherry University (2003–2007)</li>
+        <li>High School, Maths/Physics/Chemistry/Biology – Petit Seminaire Higher Secondary School (1989–2003)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Certifications</h3>
+      <div class="certs">
+        <span class="chip">Databricks Certified Data Engineer Professional</span>
+        <span class="chip">Partner Training - Data Intelligence & SAP (2025)</span>
+        <span class="chip">Honor Code Certificate - Introduction to Linux (edX)</span>
+        <span class="chip">ITIL Foundations (Lynda.com)</span>
+        <span class="chip">AWS Certified Solutions Architect</span>
+        <span class="chip">Google Cloud Professional Data Engineer</span>
+      </div>
+    </section>
+
+    <section>
+      <h3>Skills</h3>
+      <div class="skills">
+        <span class="chip">Apache Spark</span>
+        <span class="chip">Databricks</span>
+        <span class="chip">Delta Lake</span>
+        <span class="chip">Cloud Data Engineering (AWS, Azure)</span>
+        <span class="chip">UNIX/Linux/Windows Admin</span>
+        <span class="chip">Python</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Shell Scripting</span>
+        <span class="chip">Performance Optimization</span>
+        <span class="chip">Data Architecture</span>
+        <span class="chip">Team Leadership</span>
+        <span class="chip">Troubleshooting</span>
+      </div>
+    </section>
+
+    <section>
+      <h3>Contact</h3>
+      <ul class="contact-list">
+        <li><b>LinkedIn:</b> <a class="contact-link" href="https://linkedin.com/in/prabakarammeappin" target="_blank">linkedin.com/in/prabakarammeappin</a></li>
+        <li><b>Email:</b> prabakar@example.com</li>
+        <li><b>GitHub:</b> <a class="contact-link" href="https://github.com/prabakar2610" target="_blank">github.com/prabakar2610</a></li>
+        <li><b>Location:</b> Bengaluru, Karnataka, India</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    function animateLogos() {
+      const logos = document.querySelectorAll('.company-logo');
+      const observer = new window.IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('rotate');
+          } else {
+            entry.target.classList.remove('rotate');
+          }
+        });
+      }, {threshold: 0.5});
+      logos.forEach(logo => observer.observe(logo));
+    }
+    window.addEventListener("DOMContentLoaded", animateLogos);
+  </script>
 </body>
 </html>
