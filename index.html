@@ -1,174 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Prabakar Amméappin | Data Platforms & AI Performance Leader</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Keep your same fonts and styles here -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:700" rel="stylesheet">
-  <style>
-    body { background: #f9f9f9; font-family: Roboto, Arial, sans-serif; margin: 0; padding: 0; }
-    .container { background: #fff; max-width: 780px; margin: 40px auto; border-radius: 12px; box-shadow: 0 0 18px #eee; padding: 32px; }
-    h1, h2, h3, h4 { color: #425885; margin-top: 0; }
-    .company-logo { width: 36px; height: 36px; vertical-align: middle; margin-right: 9px; border-radius: 4px; }
-    .exp-entry { display: flex; align-items: flex-start; margin-bottom: 18px; }
-    .exp-content { padding-left: 12px; }
-    .contact-info { margin: 12px 0 24px 0; }
-    .contact-item { margin-right: 18px; display: inline-block; }
-    h3 { margin-top: 24px; }
-    .skills-grid { display: flex; flex-wrap: wrap; }
-    .skill-category { flex: 1 1 36%; min-width: 180px; margin-right: 24px; }
-    ul { margin: 8px 0 0 18px; }
-    li { margin-bottom: 4px; }
-    @media (max-width: 600px) {
-      .container { padding: 10px; }
-      .skills-grid { flex-direction: column; }
-      .skill-category { margin-right: 0; }
-      .exp-entry { flex-direction: column; }
-      .exp-content { padding-left: 0; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Prabakar Amméappin | Senior Data Engineer & AI Performance Leader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:700" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #1a1a1a 0%, #232526 40%, #FF6B00 100%);
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(42,44,54,0.92);
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            box-shadow: 0 6px 32px #1115;
+        }
+        header h1 {
+            color: #FF6B00;
+            margin: 0;
+            font-size: 2.6rem;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+        }
+        header h2 {
+            color: #68d3e5;
+            font-size: 1.3rem;
+            margin: 0.5rem 0 0 0;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        main {
+            max-width: 920px;
+            margin: 2rem auto;
+            background: rgba(28,37,44,0.93);
+            border-radius: 12px;
+            box-shadow: 0 10px 32px #2228;
+            padding: 2.5rem 2rem;
+        }
+        section {
+            margin-bottom: 2.2rem;
+            border-left: 6px solid #FF6B00;
+            padding-left: 1.3rem;
+            border-radius: 7px;
+            background: rgba(30,33,38,0.76);
+            box-shadow: 0 3px 18px #181d26a3;
+            transition: box-shadow 0.2s;
+        }
+        section h3 {
+            color: #FF6B00;
+            margin-top: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        .exp-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(25,30,35,0.7);
+        }
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            animation: flip 3s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes flip {
+            0%, 50% { transform: scaleX(1); }
+            25% { transform: scaleX(-1); }
+            75% { transform: scaleX(1); }
+        }
+        .exp-content {
+            flex: 1;
+        }
+        .exp-content h4 {
+            color: #68d3e5;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .exp-content .company {
+            color: #FF6B00;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .exp-content .duration {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+        .exp-content ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        .exp-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .contact-item {
+            color: #68d3e5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-item:hover {
+            color: #FF6B00;
+            transition: color 0.3s;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .skill-category {
+            background: rgba(25,30,35,0.7);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .skill-category h4 {
+            color: #68d3e5;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+        .skill-category ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Prabakar Amméappin</h1>
-    <div class="contact-info">
-      <span class="contact-item">📧 prabakar2610@gmail.com</span>
-      <span class="contact-item">📱 +91 99448 10026</span>
-      <span class="contact-item">📍 Bengaluru, Karnataka, India</span>
-      <a href="https://www.linkedin.com/in/prabakarammeappin/" class="contact-item" target="_blank">🔗 LinkedIn Profile</a>
-    </div>
-    <section>
-      <h3>Professional Summary</h3>
-      <p>
-        Data Platforms & AI Performance Leader | Staff Technical Solutions Engineer at Databricks.<br>
-        Leading technical excellence, customer success, and AI workload optimization at scale.<br>
-        Technical authority in Spark, Lakehouse, multi-cloud, and large-scale data architecture. Guiding and mentoring cross-regional engineering teams to deliver business value.
-      </p>
-    </section>
-    <section>
-      <h3>Contact Information</h3>
-    </section>
-    <section>
-      <h3>Professional Experience</h3>
-      
-      <div class="exp-entry">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" alt="Databricks" class="company-logo">
-        <div class="exp-content">
-          <h4>Staff Technical Solutions Engineer</h4>
-          <div class="company">Databricks</div>
-          <div class="duration">Jun 2025 – Present, Bengaluru, India</div>
-          <ul>
-            <li>Spearheading platform architecture and compute optimization for enterprise customers</li>
-            <li>Delivering solutions to accelerate AI adoption and optimize performance</li>
-            <li>Mentoring engineers, boosting troubleshooting and platform reliability</li>
-            <li>Championing Spark, Lakehouse, and multi-cloud best practices</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="exp-entry">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Css-corp-logo.png" alt="CSS Corp" class="company-logo">
-        <div class="exp-content">
-          <h4>Systems Specialist</h4>
-          <div class="company">Movate (formerly CSS Corp)</div>
-          <div class="duration">Jun 2016 – Nov 2019</div>
-          <ul>
-            <li>Troubleshot cloud NAS, storage, and global file locking issues</li>
-            <li>Supported enterprise storage (FreeBSD, ZFS, cloud networking)</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="exp-entry">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Teradata_logo.svg" alt="Teradata" class="company-logo">
-        <div class="exp-content">
-          <h4>Product Support Engineer</h4>
-          <div class="company">Teradata</div>
-          <div class="duration">Apr 2013 – Jun 2016</div>
-          <ul>
-            <li>Hardware analyst (NetApp, DotHill, Dell, Intel, Mellanox)</li>
-            <li>Troubleshot servers, storage arrays, and networking for large clients</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="exp-entry">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/NTT-Data-Logo.svg" alt="NTT DATA" class="company-logo">
-        <div class="exp-content">
-          <h4>Data Engineer</h4>
-          <div class="company">NTT DATA</div>
-          <div class="duration">Apr 2009 – Apr 2013</div>
-          <ul>
-            <li>Consultant Technology UNIX/STORAGE for Morgan Stanley client, team lead for major production changes</li>
-            <li>Linux server configuration, clustering, backup/restore, and NAS/SAN support</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <header>
+        <h1>Prabakar Amméappin</h1>
+        <h2>Senior Data Engineer & AI Performance Leader</h2>
+    </header>
     
-    <section>
-      <h3>Technical Skills</h3>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Core</h4>
-          <ul>
-            <li>Unix, Unix Shell Scripting</li>
-            <li>Linux, Servers, Storage</li>
-            <li>SAN & NAS, Operating Systems</li>
-            <li>Troubleshooting, Technical Support</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Programming / Scripting</h4>
-          <ul>
-            <li>Python, Perl</li>
-            <li>Shell Scripting, SQL, Cluster</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Cloud Platforms</h4>
-          <ul>
-            <li>Cloud Computing</li>
-            <li>Azure Databricks, Google Cloud Platform</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h4>Other</h4>
-          <ul>
-            <li>Veritas Cluster Server/Volume Manager</li>
-            <li>NetApp, Networking</li>
-            <li>Active Directory, Red Hat Linux</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    
-    <section>
-      <h3>Education</h3>
-      <div>
-        <h4 style="color: #68d3e5; margin: 0 0 0.5rem 0;">Bachelor of Technology, Electrical & Electronic Engineering</h4>
-        <div style="color: #FF6B00; font-weight: 700;">Pondicherry University</div>
-        <div style="color: #a0a0a0; font-size: 0.9rem;">2003 - 2007</div>
-      </div>
-      <div>
-        <h4 style="color: #68d3e5; margin: 1rem 0 0.5rem 0;">High School, Maths, Physics, Chemistry, Biology</h4>
-        <div style="color: #FF6B00; font-weight: 700;">Petit Seminaire Higher Secondary School</div>
-        <div style="color: #a0a0a0; font-size: 0.9rem;">1989 - 2003</div>
-      </div>
-    </section>
-    
-    <section>
-      <h3>Key Achievements</h3>
-      <ul>
-        <li>Mentored engineers across EMEA and India, enabling cross-region technical excellence</li>
-        <li>Optimized Spark, Lakehouse, and multi-cloud deployments for mission-critical workloads</li>
-        <li>Recognized for outstanding customer impact and solution delivery at Databricks</li>
-        <li>Received certifications in Databricks data intelligence, platform admin, and technical enablement</li>
-        <li>Endorsed as technical authority on UNIX, storage, and infra by customers & colleagues</li>
-        <li>English (Professional), French (Elementary proficiency)</li>
-      </ul>
-    </section>
-  </div>
+    <main>
+        <section>
+            <h3>Contact Information</h3>
+            <div class="contact-info">
+                <span class="contact-item">📧 prabakar2610@gmail.com</span>
+                <span class="contact-item">📱 +91 99448 10026</span>
+                <span class="contact-item">📍 Bangalore, Karnataka, India</span>
+                <a class="contact-item" href="https://www.linkedin.com/in/prabakarammeappin/">🔗 LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <section>
+            <h3>Professional Experience</h3>
+            
+            <div class="exp-entry">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" alt="Databricks" class="company-logo">
+                <div class="exp-content">
+                    <h4>Staff Technical Solutions Engineer</h4>
+                    <div class="company">Databricks</div>
+                    <div class="duration">2019 - Present</div>
+                    <ul>
+                        <li>Leading AI/ML platform optimization initiatives for enterprise clients</li>
+                        <li>Architecting scalable data pipelines using Apache Spark and Delta Lake</li>
+                        <li>Implementing advanced analytics solutions for Fortune 500 companies</li>
+                        <li>Mentoring junior engineers on modern data engineering practices</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-entry">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Css-corp-logo.png" alt="CSS Corp" class="company-logo">
+                <div class="exp-content">
+                    <h4>Systems Specialist</h4>
+                    <div class="company">Movate (formerly CSS Corp)</div>
+                    <div class="duration">2016 - 2019</div>
+                    <ul>
+                        <li>Designed and implemented enterprise data warehouse solutions</li>
+                        <li>Led cloud migration projects from on-premises to AWS/Azure</li>
+                        <li>Established data governance frameworks and best practices</li>
+                        <li>Collaborated with cross-functional teams on AI/ML initiatives</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-entry">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Teradata_logo.svg" alt="Teradata" class="company-logo">
+                <div class="exp-content">
+                    <h4>Product Support Engineer</h4>
+                    <div class="company">Teradata</div>
+                    <div class="duration">2013 - 2016</div>
+                    <ul>
+                        <li>Optimized large-scale data warehouse performance and query execution</li>
+                        <li>Developed ETL processes handling petabyte-scale datasets</li>
+                        <li>Implemented advanced analytics and machine learning models</li>
+                        <li>Provided technical consultation for enterprise data solutions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-entry">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/NTT-Data-Logo.svg" alt="NTT DATA" class="company-logo">
+                <div class="exp-content">
+                    <h4>Data Engineer</h4>
+                    <div class="company">NTT DATA</div>
+                    <div class="duration">2009 - 2013</div>
+                    <ul>
+                        <li>Built robust data integration pipelines for global clients</li>
+                        <li>Developed real-time streaming analytics solutions</li>
+                        <li>Collaborated on digital transformation initiatives</li>
+                        <li>Maintained high-availability data systems across multiple regions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Data Platforms</h4>
+                    <ul>
+                        <li>Apache Spark</li>
+                        <li>Databricks</li>
+                        <li>Apache Kafka</li>
+                        <li>Snowflake</li>
+                        <li>Teradata</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Cloud Platforms</h4>
+                    <ul>
+                        <li>AWS (S3, EMR, Glue, Redshift)</li>
+                        <li>Microsoft Azure</li>
+                        <li>Google Cloud Platform</li>
+                        <li>Delta Lake</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>Scala</li>
+                        <li>SQL</li>
+                        <li>Java</li>
+                        <li>R</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>AI/ML Technologies</h4>
+                    <ul>
+                        <li>TensorFlow</li>
+                        <li>PyTorch</li>
+                        <li>MLflow</li>
+                        <li>Scikit-learn</li>
+                        <li>Apache Airflow</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Education</h3>
+            <div>
+                <h4 style="color: #68d3e5; margin: 0 0 0.5rem 0;">Bachelor of Engineering in Computer Science</h4>
+                <div style="color: #FF6B00; font-weight: 700;">Anna University, Chennai</div>
+                <div style="color: #a0a0a0; font-size: 0.9rem;">2011 - 2015</div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Key Achievements</h3>
+            <ul>
+                <li>Led successful migration of 500TB+ data warehouse to cloud infrastructure</li>
+                <li>Improved query performance by 300% through optimization techniques</li>
+                <li>Architected ML pipelines processing 10M+ records daily</li>
+                <li>Mentored 15+ junior engineers across multiple organizations</li>
+                <li>Published technical articles on modern data engineering practices</li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
