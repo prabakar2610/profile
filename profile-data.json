@@ -1,0 +1,103 @@
+{
+  "personal": {
+    "name": "Prabakar Amméappin",
+    "title": "Senior Data Engineer & AI Performance Leader",
+    "contact": {
+      "email": "prabakar2610@gmail.com",
+      "phone": "+91 99448 10026",
+      "location": "Bangalore, Karnataka, India",
+      "linkedin": "https://www.linkedin.com/in/prabakarammeappin/"
+    }
+  },
+  "experience": [
+    {
+      "position": "Staff Technical Solutions Engineer",
+      "company": "Databricks",
+      "duration": "2019 - Present",
+      "logo": "https://asset.brandfetch.io/idIq_kF0rb/idv3zwmSiY.jpeg",
+      "responsibilities": [
+        "Leading AI/ML platform optimization initiatives for enterprise clients",
+        "Architecting scalable data pipelines using Apache Spark and Delta Lake",
+        "Implementing advanced analytics solutions for Fortune 500 companies",
+        "Mentoring junior engineers on modern data engineering practices"
+      ]
+    },
+    {
+      "position": "Systems Specialist",
+      "company": "Movate (formerly CSS Corp)",
+      "duration": "2016 - 2019",
+      "logo": "https://asset.brandfetch.io/idFdo8ulhr/idzjbYgHIP.png",
+      "responsibilities": [
+        "Designed and implemented enterprise data warehouse solutions",
+        "Led cloud migration projects from on-premises to AWS/Azure",
+        "Established data governance frameworks and best practices",
+        "Collaborated with cross-functional teams on AI/ML initiatives"
+      ]
+    },
+    {
+      "position": "Product Support Engineer",
+      "company": "Teradata",
+      "duration": "2013 - 2016",
+      "logo": "https://asset.brandfetch.io/id20mQyGeY/idx8oHclh9.jpeg",
+      "responsibilities": [
+        "Optimized large-scale data warehouse performance and query execution",
+        "Developed ETL processes handling petabyte-scale datasets",
+        "Implemented advanced analytics and machine learning models",
+        "Provided technical consultation for enterprise data solutions"
+      ]
+    },
+    {
+      "position": "Data Engineer",
+      "company": "NTT DATA",
+      "duration": "2009 - 2013",
+      "logo": "https://asset.brandfetch.io/idw382q_kc/idJ5L6D5Kl.jpeg",
+      "responsibilities": [
+        "Built robust data integration pipelines for global clients",
+        "Developed real-time streaming analytics solutions",
+        "Collaborated on digital transformation initiatives",
+        "Maintained high-availability data systems across multiple regions"
+      ]
+    }
+  ],
+  "skills": {
+    "Data Platforms": [
+      "Apache Spark",
+      "Databricks",
+      "Apache Kafka",
+      "Snowflake",
+      "Teradata"
+    ],
+    "Cloud Platforms": [
+      "AWS (S3, EMR, Glue, Redshift)",
+      "Microsoft Azure",
+      "Google Cloud Platform",
+      "Delta Lake"
+    ],
+    "Programming Languages": [
+      "Python",
+      "Scala",
+      "SQL",
+      "Java",
+      "R"
+    ],
+    "AI/ML Technologies": [
+      "TensorFlow",
+      "PyTorch",
+      "MLflow",
+      "Scikit-learn",
+      "Apache Airflow"
+    ]
+  },
+  "education": {
+    "degree": "Bachelor of Engineering in Computer Science",
+    "university": "Anna University, Chennai",
+    "duration": "2011 - 2015"
+  },
+  "achievements": [
+    "Led successful migration of 500TB+ data warehouse to cloud infrastructure",
+    "Improved query performance by 300% through optimization techniques",
+    "Architected ML pipelines processing 10M+ records daily",
+    "Mentored 15+ junior engineers across multiple organizations",
+    "Published technical articles on modern data engineering practices"
+  ]
+}
