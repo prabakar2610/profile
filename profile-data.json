@@ -1,61 +1,107 @@
 {
   "personal": {
-    "name": "Prabakar Amméappin",
-    "title": "Senior Data Engineer & AI Performance Leader",
+    "name": "Prabakar Ammeappin",
+    "title": "Data Platforms & AI Performance Leader",
+    "subtitle": "Staff Technical Solutions Engineer at Databricks",
+    "summary": "Staff Technical Solutions Engineer and recognized leader in data platforms and AI performance at Databricks, driving technical excellence and customer success at enterprise scale across EMEA and India.",
     "contact": {
       "email": "prabakar2610@gmail.com",
-      "phone": "+91 99448 10026",
-      "location": "Bangalore, Karnataka, India",
-      "linkedin": "https://www.linkedin.com/in/prabakarammeappin/"
+      "location": "Bengaluru, Karnataka, India",
+      "linkedin": "https://www.linkedin.com/in/prabakarammeappin/",
+      "github": "https://github.com/prabakar2610"
     }
   },
+  "highlights": [
+    "18+ years of experience in technical leadership and platform engineering",
+    "Leading cross-functional teams across EMEA and India regions",
+    "Expert in Apache Spark, Lakehouse Architecture, and Multi-Cloud environments",
+    "Specializing in compute optimization and enterprise-scale AI workload management"
+  ],
   "experience": [
     {
       "position": "Staff Technical Solutions Engineer",
       "company": "Databricks",
-      "duration": "2019 - Present",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png",
+      "location": "Bengaluru, India",
+      "duration": "Jun 2025 - Present",
+      "logo": "https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg",
       "responsibilities": [
-        "Leading AI/ML platform optimization initiatives for enterprise clients",
-        "Architecting scalable data pipelines using Apache Spark and Delta Lake",
-        "Implementing advanced analytics solutions for Fortune 500 companies",
-        "Mentoring junior engineers on modern data engineering practices"
+        "Spearhead strategic platform architecture decisions and compute optimization for enterprise customers",
+        "Deliver hands-on solutions accelerating AI adoption and optimizing platform performance for mission-critical workloads",
+        "Drive cross-functional team development through mentoring programs and technical workshops",
+        "Champion internal best practices as technical authority on Spark performance tuning and Lakehouse architecture",
+        "Design solutions enabling seamless scaling of data and AI workloads from POC to production"
       ]
     },
     {
-      "position": "Systems Specialist",
-      "company": "Movate (formerly CSS Corp)",
-      "duration": "2016 - 2019",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Css-corp-logo.png",
+      "position": "Staff Technical Solutions Engineer",
+      "company": "Databricks",
+      "location": "Amsterdam, Netherlands",
+      "duration": "Oct 2024 - May 2025",
+      "logo": "https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg",
       "responsibilities": [
-        "Designed and implemented enterprise data warehouse solutions",
-        "Led cloud migration projects from on-premises to AWS/Azure",
-        "Established data governance frameworks and best practices",
-        "Collaborated with cross-functional teams on AI/ML initiatives"
+        "Led EMEA Technical Solutions Team across Amsterdam and India offices",
+        "Oversaw daily standups, case reviews, and technical guidance for engineers",
+        "Drove complex account-level escalations collaborating with cross-functional teams",
+        "Mentored engineers to enhance troubleshooting skills and platform reliability"
+      ]
+    },
+    {
+      "position": "Senior Technical Solutions Engineer",
+      "company": "Databricks",
+      "location": "Amsterdam, Netherlands",
+      "duration": "Aug 2022 - Oct 2024",
+      "logo": "https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg",
+      "responsibilities": [
+        "Reviewed cases and provided guidance on effective troubleshooting and resolution strategies",
+        "Delivered dedicated support for strategic partners across EMEA region",
+        "Led escalation calls providing expert guidance on complex customer issues"
+      ]
+    },
+    {
+      "position": "Technical Solutions Engineer",
+      "company": "Databricks",
+      "location": "Amsterdam, Netherlands",
+      "duration": "Nov 2019 - Aug 2022",
+      "logo": "https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg",
+      "responsibilities": [
+        "Provided technical guidance and developed solutions across AWS, Azure, and GCP",
+        "Troubleshot complex technical challenges in large-scale production environments",
+        "Specialized in Spark, distributed computing, networking, and cloud security"
+      ]
+    },
+    {
+      "position": "Systems Specialist - TSE",
+      "company": "CSS Corp (now Movate)",
+      "location": "Bengaluru, India",
+      "duration": "Jun 2016 - Nov 2019",
+      "logo": "https://www.movate.com/wp-content/uploads/2022/04/movate-logo.svg",
+      "responsibilities": [
+        "Technical support engineer for Panzura cloud-based NAS appliance",
+        "Expertise in FreeBSD, ZFS, Global File Locking, and Cloud Networking"
       ]
     },
     {
       "position": "Product Support Engineer",
       "company": "Teradata",
-      "duration": "2013 - 2016",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/af/Teradata_logo.svg",
+      "location": "Hyderabad, India",
+      "duration": "Apr 2013 - Jun 2016",
+      "logo": "https://www.teradata.com/getmedia/80da7c58-7c9c-4d73-b3e7-5c24e1c0b1e7/teradata-logo.svg",
       "responsibilities": [
-        "Optimized large-scale data warehouse performance and query execution",
-        "Developed ETL processes handling petabyte-scale datasets",
-        "Implemented advanced analytics and machine learning models",
-        "Provided technical consultation for enterprise data solutions"
+        "Hardware Analyst troubleshooting server, storage, and network issues",
+        "Expertise in NetApp E-series, DotHill storage arrays, Dell PowerEdge servers",
+        "Managed SAS & FC HBA, Bynet switches, and Mellanox switches"
       ]
     },
     {
-      "position": "Data Engineer",
-      "company": "NTT DATA",
-      "duration": "2009 - 2013",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/0/09/NTT-Data-Logo.svg",
+      "position": "Team Lead",
+      "company": "NTT DATA Americas",
+      "location": "Bengaluru, India",
+      "duration": "Apr 2009 - Apr 2013",
+      "logo": "https://www.nttdata.com/global/en/-/media/nttdata/images/logo.svg",
       "responsibilities": [
-        "Built robust data integration pipelines for global clients",
-        "Developed real-time streaming analytics solutions",
-        "Collaborated on digital transformation initiatives",
-        "Maintained high-availability data systems across multiple regions"
+        "Technology Consultant (UNIX/Storage) for Morgan Stanley",
+        "Led team of 12 members handling major production changes",
+        "Experience in NAS/SAN technologies, Linux server configuration, Veritas cluster"
       ]
     }
   ],
@@ -63,41 +109,58 @@
     "Data Platforms": [
       "Apache Spark",
       "Databricks",
-      "Apache Kafka",
-      "Snowflake",
-      "Teradata"
+      "Delta Lake",
+      "Lakehouse Architecture"
     ],
     "Cloud Platforms": [
-      "AWS (S3, EMR, Glue, Redshift)",
+      "AWS",
       "Microsoft Azure",
-      "Google Cloud Platform",
-      "Delta Lake"
+      "Google Cloud Platform"
     ],
-    "Programming Languages": [
-      "Python",
-      "Scala",
-      "SQL",
-      "Java",
-      "R"
+    "Core Expertise": [
+      "Technical Leadership",
+      "Compute Optimization",
+      "Performance Tuning",
+      "Distributed Computing"
     ],
-    "AI/ML Technologies": [
-      "TensorFlow",
-      "PyTorch",
-      "MLflow",
-      "Scikit-learn",
-      "Apache Airflow"
+    "Infrastructure": [
+      "Linux/FreeBSD",
+      "NAS/SAN",
+      "Cloud Networking",
+      "Veritas Cluster"
     ]
   },
+  "certifications": [
+    {
+      "name": "Databricks Lakehouse Fundamentals",
+      "issuer": "Databricks"
+    },
+    {
+      "name": "Platform Administrator",
+      "issuer": "Databricks"
+    },
+    {
+      "name": "Lakehouse with Delta Technical Enablement",
+      "issuer": "Databricks"
+    },
+    {
+      "name": "ITIL Foundations",
+      "issuer": "AXELOS"
+    },
+    {
+      "name": "Introduction to Linux",
+      "issuer": "The Linux Foundation (edX)"
+    }
+  ],
   "education": {
-    "degree": "Bachelor of Engineering in Computer Science",
-    "university": "Anna University, Chennai",
-    "duration": "2011 - 2015"
+    "degree": "Bachelor of Technology",
+    "field": "Electrical & Electronic Engineering",
+    "university": "Pondicherry University",
+    "duration": "2003 - 2007"
   },
-  "achievements": [
-    "Led successful migration of 500TB+ data warehouse to cloud infrastructure",
-    "Improved query performance by 300% through optimization techniques",
-    "Architected ML pipelines processing 10M+ records daily",
-    "Mentored 15+ junior engineers across multiple organizations",
-    "Published technical articles on modern data engineering practices"
+  "languages": [
+    { "language": "Tamil", "level": "Native" },
+    { "language": "English", "level": "Professional" },
+    { "language": "French", "level": "Elementary (DELF A2)" }
   ]
 }
