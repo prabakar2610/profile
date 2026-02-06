@@ -575,6 +575,27 @@
             transition: opacity 0.3s ease;
         }
 
+        .exp-card-content {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .company-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: var(--bg-card-hover);
+            padding: 8px;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        .exp-details {
+            flex: 1;
+        }
+
         .exp-card:hover {
             background: var(--bg-card-hover);
             border-color: rgba(255, 255, 255, 0.15);
@@ -1014,10 +1035,6 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="hero-company">
-                        <img src="https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg" alt="Databricks" onerror="this.style.display='none'">
-                        <span>Staff Solutions Engineer</span>
-                    </div>
                     <h1>Hi, I'm <span>Prabakar Ammeappin</span></h1>
                     <p class="hero-subtitle">Data Platforms & AI Performance Leader</p>
                     <p class="hero-description">
@@ -1071,124 +1088,159 @@
             </div>
             <div class="experience-grid">
                 <div class="exp-card fade-in">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Staff Solutions Engineer</div>
-                            <div class="exp-company">Databricks</div>
-                        </div>
-                        <div class="exp-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Jun 2025 - Present</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Bengaluru, India</span>
+                    <div class="exp-card-content">
+                        <img src="https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg" alt="Databricks" class="company-logo">
+                        <div class="exp-details">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Staff Solutions Engineer</div>
+                                    <div class="exp-company">Databricks</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Jun 2025 - Present</span>
+                                    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Bengaluru, India</span>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Spearhead strategic platform architecture decisions and compute optimization for enterprise customers</li>
+                                <li>Drive cross-functional team development through mentoring programs and technical workshops</li>
+                                <li>Champion internal best practices as technical authority on Spark performance tuning</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul class="exp-description">
-                        <li>Spearhead strategic platform architecture decisions and compute optimization for enterprise customers</li>
-                        <li>Drive cross-functional team development through mentoring programs and technical workshops</li>
-                        <li>Champion internal best practices as technical authority on Spark performance tuning</li>
-                    </ul>
                 </div>
 
                 <div class="exp-card fade-in">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Staff Solutions Engineer</div>
-                            <div class="exp-company">Databricks</div>
-                        </div>
-                        <div class="exp-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Oct 2024 - May 2025</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Amsterdam, Netherlands</span>
+                    <div class="exp-card-content">
+                        <img src="https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg" alt="Databricks" class="company-logo">
+                        <div class="exp-details">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Staff Solutions Engineer</div>
+                                    <div class="exp-company">Databricks</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Oct 2024 - May 2025</span>
+                                    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Amsterdam, Netherlands</span>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Led EMEA Solutions Team across Amsterdam and India offices</li>
+                                <li>Drove complex account-level escalations collaborating with cross-functional teams</li>
+                                <li>Mentored engineers to enhance troubleshooting skills and platform reliability</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul class="exp-description">
-                        <li>Led EMEA Technical Solutions Team across Amsterdam and India offices</li>
-                        <li>Drove complex account-level escalations collaborating with cross-functional teams</li>
-                        <li>Mentored engineers to enhance troubleshooting skills and platform reliability</li>
-                    </ul>
                 </div>
 
                 <div class="exp-card fade-in">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Senior Solutions Engineer</div>
-                            <div class="exp-company">Databricks</div>
-                        </div>
-                        <div class="exp-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Aug 2022 - Oct 2024</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Amsterdam, Netherlands</span>
+                    <div class="exp-card-content">
+                        <img src="https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg" alt="Databricks" class="company-logo">
+                        <div class="exp-details">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Senior Solutions Engineer</div>
+                                    <div class="exp-company">Databricks</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Aug 2022 - Oct 2024</span>
+                                    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Amsterdam, Netherlands</span>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Delivered dedicated support for strategic partners across EMEA region</li>
+                                <li>Led escalation calls providing expert guidance on complex customer issues</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul class="exp-description">
-                        <li>Delivered dedicated support for strategic partners across EMEA region</li>
-                        <li>Led escalation calls providing expert guidance on complex customer issues</li>
-                    </ul>
                 </div>
 
                 <div class="exp-card fade-in">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Solutions Engineer</div>
-                            <div class="exp-company">Databricks</div>
-                        </div>
-                        <div class="exp-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Nov 2019 - Aug 2022</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Amsterdam, Netherlands</span>
+                    <div class="exp-card-content">
+                        <img src="https://www.databricks.com/wp-content/uploads/2022/06/db-nav-logo.svg" alt="Databricks" class="company-logo">
+                        <div class="exp-details">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Solutions Engineer</div>
+                                    <div class="exp-company">Databricks</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Nov 2019 - Aug 2022</span>
+                                    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Amsterdam, Netherlands</span>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Provided technical guidance and developed solutions across AWS, Azure, and GCP</li>
+                                <li>Specialized in Spark, distributed computing, networking, and cloud security</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul class="exp-description">
-                        <li>Provided technical guidance and developed solutions across AWS, Azure, and GCP</li>
-                        <li>Specialized in Spark, distributed computing, networking, and cloud security</li>
-                    </ul>
                 </div>
 
                 <div class="exp-card fade-in">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Systems Specialist</div>
-                            <div class="exp-company">CSS Corp (now Movate)</div>
-                        </div>
-                        <div class="exp-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Jun 2016 - Nov 2019</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Bengaluru, India</span>
+                    <div class="exp-card-content">
+                        <img src="https://www.movate.com/wp-content/uploads/2023/01/movate-logo-dark.svg" alt="Movate" class="company-logo">
+                        <div class="exp-details">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Systems Specialist</div>
+                                    <div class="exp-company">CSS Corp (now Movate)</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Jun 2016 - Nov 2019</span>
+                                    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Bengaluru, India</span>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Support Engineer for Panzura cloud-based NAS appliance</li>
+                                <li>Expertise in FreeBSD, ZFS, Global File Locking, and Cloud Networking</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul class="exp-description">
-                        <li>Support Engineer for Panzura cloud-based NAS appliance</li>
-                        <li>Expertise in FreeBSD, ZFS, Global File Locking, and Cloud Networking</li>
-                    </ul>
                 </div>
 
                 <div class="exp-card fade-in">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Product Engineer</div>
-                            <div class="exp-company">Teradata</div>
-                        </div>
-                        <div class="exp-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Apr 2013 - Jun 2016</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Hyderabad, India</span>
+                    <div class="exp-card-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Teradata_logo_2018.svg" alt="Teradata" class="company-logo">
+                        <div class="exp-details">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Product Engineer</div>
+                                    <div class="exp-company">Teradata</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Apr 2013 - Jun 2016</span>
+                                    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Hyderabad, India</span>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Hardware Analyst troubleshooting server, storage, and network issues</li>
+                                <li>Expertise in NetApp E-series, Dell PowerEdge servers, Mellanox switches</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul class="exp-description">
-                        <li>Hardware Analyst troubleshooting server, storage, and network issues</li>
-                        <li>Expertise in NetApp E-series, Dell PowerEdge servers, Mellanox switches</li>
-                    </ul>
                 </div>
 
                 <div class="exp-card fade-in">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">Team Lead</div>
-                            <div class="exp-company">NTT DATA Americas</div>
-                        </div>
-                        <div class="exp-meta">
-                            <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Apr 2009 - Apr 2013</span>
-                            <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Bengaluru, India</span>
+                    <div class="exp-card-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/NTT-Data-Logo.svg" alt="NTT DATA" class="company-logo">
+                        <div class="exp-details">
+                            <div class="exp-header">
+                                <div>
+                                    <div class="exp-title">Team Lead</div>
+                                    <div class="exp-company">NTT DATA Americas</div>
+                                </div>
+                                <div class="exp-meta">
+                                    <span><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg> Apr 2009 - Apr 2013</span>
+                                    <span><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg> Bengaluru, India</span>
+                                </div>
+                            </div>
+                            <ul class="exp-description">
+                                <li>Technology Consultant (UNIX/Storage) for Morgan Stanley</li>
+                                <li>Led team of 12 members handling major production changes</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul class="exp-description">
-                        <li>Technology Consultant (UNIX/Storage) for Morgan Stanley</li>
-                        <li>Led team of 12 members handling major production changes</li>
-                    </ul>
                 </div>
             </div>
         </div>
