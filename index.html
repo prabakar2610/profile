@@ -842,58 +842,130 @@
             font-size: 0.9rem;
         }
 
-        /* Work Eligibility */
-        .eligibility-grid {
+        /* Work Eligibility / Global Mobility */
+        .mobility-section {
+            margin-bottom: 3rem;
+        }
+
+        .mobility-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .mobility-title svg {
+            fill: var(--accent);
+        }
+
+        .mobility-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
-        .eligibility-card {
+        .mobility-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .eligibility-card:hover {
+        .mobility-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .mobility-card.work::before {
+            background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+        }
+
+        .mobility-card.travel::before {
+            background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 100%);
+        }
+
+        .mobility-card:hover {
             background: var(--bg-card-hover);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             border-color: var(--accent);
         }
 
-        .eligibility-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .eligibility-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-
-        .eligibility-info h4 {
+        .mobility-card h4 {
             font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 0.25rem;
             color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .eligibility-info span {
-            font-size: 0.85rem;
+        .mobility-card.work h4::after {
+            content: 'WORK';
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .mobility-card.travel h4::after {
+            content: 'TRAVEL';
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+            color: white;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .mobility-card .countries {
+            font-size: 0.9rem;
             color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .mobility-note {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mobility-note p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .mobility-note strong {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .mobility-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobility-title {
+                font-size: 1.1rem;
+            }
         }
 
         /* CTA Section */
@@ -1448,68 +1520,60 @@
     </section>
 
     <!-- Work Eligibility Section -->
-    <section>
+    <section id="mobility">
         <div class="container">
             <div class="section-header fade-in">
                 <span class="section-label">Global Mobility</span>
-                <h2 class="section-title">Work <span>Eligibility</span></h2>
-                <p class="section-description">Authorized to work in 33+ countries without visa sponsorship.</p>
+                <h2 class="section-title">Work & Travel <span>Eligibility</span></h2>
+                <p class="section-description">Authorized to work in 33+ countries and visa-free business travel to 190+ destinations.</p>
             </div>
-            <div class="eligibility-grid fade-in">
-                <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            
+            <!-- Work Authorization -->
+            <div class="mobility-section fade-in">
+                <h3 class="mobility-title"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg> Work Authorization (No Visa Required)</h3>
+                <div class="mobility-grid">
+                    <div class="mobility-card work">
+                        <h4>Europe (33 Countries)</h4>
+                        <p class="countries">Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Norway, Iceland, Liechtenstein, Switzerland, Monaco, Andorra</p>
                     </div>
-                    <div class="eligibility-info">
-                        <h4>European Union</h4>
-                        <span>All 27 Member States</span>
-                    </div>
-                </div>
-                <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    </div>
-                    <div class="eligibility-info">
-                        <h4>EEA Countries</h4>
-                        <span>Norway, Iceland, Liechtenstein</span>
+                    <div class="mobility-card work">
+                        <h4>Asia (1 Country)</h4>
+                        <p class="countries">India (OCI Card Holder)</p>
                     </div>
                 </div>
-                <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </div>
+
+            <!-- Business Travel -->
+            <div class="mobility-section fade-in">
+                <h3 class="mobility-title"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg> Business Travel (Visa-Free / eVisa / On Arrival)</h3>
+                
+                <div class="mobility-grid">
+                    <div class="mobility-card travel">
+                        <h4>Europe</h4>
+                        <p class="countries">All EU/EEA/Schengen + UK, Ukraine, Georgia, Serbia, Albania, North Macedonia, Montenegro, Bosnia, Kosovo, Moldova</p>
                     </div>
-                    <div class="eligibility-info">
-                        <h4>Switzerland</h4>
-                        <span>Bilateral Agreement</span>
+                    <div class="mobility-card travel">
+                        <h4>Americas</h4>
+                        <p class="countries">USA (ESTA), Canada (eTA), Mexico, Brazil, Argentina, Chile, Colombia, Peru, Uruguay, Costa Rica, Panama, Ecuador, Paraguay, Bolivia, Jamaica, Bahamas, Barbados</p>
                     </div>
-                </div>
-                <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    <div class="mobility-card travel">
+                        <h4>Asia Pacific</h4>
+                        <p class="countries">Japan, South Korea, Singapore, Hong Kong, Malaysia, Thailand, Indonesia (VoA), Philippines, Taiwan, Vietnam (e-Visa), UAE, Israel, Qatar, Bahrain, Oman (e-Visa), India (OCI)</p>
                     </div>
-                    <div class="eligibility-info">
-                        <h4>Monaco & Andorra</h4>
-                        <span>Special Agreements</span>
+                    <div class="mobility-card travel">
+                        <h4>Oceania</h4>
+                        <p class="countries">Australia (eVisitor), New Zealand (NZeTA), Fiji, Samoa, Vanuatu</p>
                     </div>
-                </div>
-                <div class="eligibility-card">
-                    <div class="eligibility-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    </div>
-                    <div class="eligibility-info">
-                        <h4>India</h4>
-                        <span>OCI Card Holder</span>
-                    </div>
-                </div>
-                <div class="eligibility-card">
-                    <div class="eligibility-icon" style="background: linear-gradient(135deg, var(--text-muted) 0%, var(--text-secondary) 100%);">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    </div>
-                    <div class="eligibility-info">
-                        <h4>UK, USA, Canada, Australia</h4>
-                        <span>Visa Sponsorship Required</span>
+                    <div class="mobility-card travel">
+                        <h4>Africa</h4>
+                        <p class="countries">South Africa, Morocco, Tunisia, Senegal, Mauritius, Seychelles, Botswana, Namibia, Kenya (e-Visa), Tanzania (e-Visa), Rwanda (VoA), Egypt (e-Visa)</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Note -->
+            <div class="mobility-note fade-in">
+                <p><strong>Note:</strong> Business travel duration varies by country (typically 30-90 days). Work authorization in UK, USA, Canada, and Australia requires employer sponsorship.</p>
             </div>
         </div>
     </section>
