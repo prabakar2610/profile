@@ -583,14 +583,26 @@
         }
 
         .company-logo {
-            width: 56px;
-            height: 56px;
-            border-radius: 12px;
+            width: 72px;
+            height: 72px;
+            border-radius: 14px;
             object-fit: contain;
-            background: var(--bg-card-hover);
-            padding: 8px;
+            padding: 10px;
             flex-shrink: 0;
             border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        /* Light theme - use light gray background for logo visibility */
+        [data-theme="light"] .company-logo {
+            background: #f8f9fa;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Dark theme - use dark background with subtle contrast */
+        [data-theme="dark"] .company-logo {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .exp-details {
