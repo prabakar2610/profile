@@ -968,6 +968,118 @@
             }
         }
 
+        /* World Map Section */
+        #world-map {
+            padding: 5rem 0;
+        }
+
+        .map-legend {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .legend-color.work-color {
+            background: #10b981;
+        }
+
+        .legend-color.travel-color {
+            background: #f59e0b;
+        }
+
+        .world-map-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        #map-wrapper {
+            width: 100%;
+            min-height: 400px;
+        }
+
+        #map-wrapper svg {
+            width: 100%;
+            height: auto;
+        }
+
+        #map-wrapper svg path {
+            fill: var(--text-muted);
+            opacity: 0.3;
+            stroke: var(--border);
+            stroke-width: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        #map-wrapper svg path.work-country {
+            fill: #10b981;
+            opacity: 1;
+        }
+
+        #map-wrapper svg path.travel-country {
+            fill: #f59e0b;
+            opacity: 0.85;
+        }
+
+        #map-wrapper svg path:hover {
+            opacity: 1;
+            stroke-width: 1;
+        }
+
+        .map-tooltip {
+            position: fixed;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            pointer-events: none;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .map-tooltip.work {
+            border-left: 3px solid #10b981;
+        }
+
+        .map-tooltip.travel {
+            border-left: 3px solid #f59e0b;
+        }
+
+        @media (max-width: 768px) {
+            .map-legend {
+                gap: 1rem;
+            }
+            
+            .legend-item {
+                font-size: 0.8rem;
+            }
+            
+            .world-map-container {
+                padding: 1rem;
+            }
+        }
+
         /* CTA Section */
         .cta-section {
             text-align: center;
@@ -1600,6 +1712,29 @@
         </div>
     </section>
 
+    <!-- World Map Section -->
+    <section id="world-map">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Global Reach</span>
+                <h2 class="section-title">Work & Travel <span>Map</span></h2>
+            </div>
+            <div class="map-legend fade-in">
+                <div class="legend-item">
+                    <span class="legend-color work-color"></span>
+                    <span>Work Authorization (No Visa Required)</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color travel-color"></span>
+                    <span>Business Travel (Visa-Free / On Arrival)</span>
+                </div>
+            </div>
+            <div class="world-map-container fade-in">
+                <div id="map-wrapper"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1676,6 +1811,182 @@
                 }
             });
         });
+
+        // World Map - Countries where can work (no visa)
+        const workCountries = [
+            'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 
+            'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', // EU 27
+            'NO', 'IS', 'LI', // EEA
+            'CH', 'MC', 'AD', // Switzerland, Monaco, Andorra
+            'IN' // India (OCI)
+        ];
+
+        // Countries for business travel (visa-free or on arrival)
+        const travelCountries = [
+            'GB', 'UA', 'GE', 'RS', 'AL', 'MK', 'ME', 'BA', 'XK', 'MD', // Europe non-EU
+            'US', 'CA', 'MX', 'BR', 'AR', 'CL', 'CO', 'PE', 'UY', 'CR', 'PA', 'EC', 'PY', 'BO', 'JM', 'BS', 'BB', // Americas
+            'JP', 'KR', 'SG', 'HK', 'MY', 'TH', 'ID', 'PH', 'TW', 'VN', 'AE', 'IL', 'QA', 'BH', 'OM', // Asia
+            'AU', 'NZ', 'FJ', 'WS', 'VU', // Oceania
+            'ZA', 'MA', 'TN', 'SN', 'MU', 'SC', 'BW', 'NA', 'KE', 'TZ', 'RW', 'EG' // Africa
+        ];
+
+        // Country names for tooltips
+        const countryNames = {
+            'AT': 'Austria', 'BE': 'Belgium', 'BG': 'Bulgaria', 'HR': 'Croatia', 'CY': 'Cyprus',
+            'CZ': 'Czech Republic', 'DK': 'Denmark', 'EE': 'Estonia', 'FI': 'Finland', 'FR': 'France',
+            'DE': 'Germany', 'GR': 'Greece', 'HU': 'Hungary', 'IE': 'Ireland', 'IT': 'Italy',
+            'LV': 'Latvia', 'LT': 'Lithuania', 'LU': 'Luxembourg', 'MT': 'Malta', 'NL': 'Netherlands',
+            'PL': 'Poland', 'PT': 'Portugal', 'RO': 'Romania', 'SK': 'Slovakia', 'SI': 'Slovenia',
+            'ES': 'Spain', 'SE': 'Sweden', 'NO': 'Norway', 'IS': 'Iceland', 'LI': 'Liechtenstein',
+            'CH': 'Switzerland', 'MC': 'Monaco', 'AD': 'Andorra', 'IN': 'India',
+            'GB': 'United Kingdom', 'UA': 'Ukraine', 'GE': 'Georgia', 'RS': 'Serbia', 'AL': 'Albania',
+            'MK': 'North Macedonia', 'ME': 'Montenegro', 'BA': 'Bosnia & Herzegovina', 'XK': 'Kosovo', 'MD': 'Moldova',
+            'US': 'United States', 'CA': 'Canada', 'MX': 'Mexico', 'BR': 'Brazil', 'AR': 'Argentina',
+            'CL': 'Chile', 'CO': 'Colombia', 'PE': 'Peru', 'UY': 'Uruguay', 'CR': 'Costa Rica',
+            'PA': 'Panama', 'EC': 'Ecuador', 'PY': 'Paraguay', 'BO': 'Bolivia', 'JM': 'Jamaica',
+            'BS': 'Bahamas', 'BB': 'Barbados', 'JP': 'Japan', 'KR': 'South Korea', 'SG': 'Singapore',
+            'HK': 'Hong Kong', 'MY': 'Malaysia', 'TH': 'Thailand', 'ID': 'Indonesia', 'PH': 'Philippines',
+            'TW': 'Taiwan', 'VN': 'Vietnam', 'AE': 'UAE', 'IL': 'Israel', 'QA': 'Qatar', 'BH': 'Bahrain',
+            'OM': 'Oman', 'AU': 'Australia', 'NZ': 'New Zealand', 'FJ': 'Fiji', 'WS': 'Samoa', 'VU': 'Vanuatu',
+            'ZA': 'South Africa', 'MA': 'Morocco', 'TN': 'Tunisia', 'SN': 'Senegal', 'MU': 'Mauritius',
+            'SC': 'Seychelles', 'BW': 'Botswana', 'NA': 'Namibia', 'KE': 'Kenya', 'TZ': 'Tanzania',
+            'RW': 'Rwanda', 'EG': 'Egypt'
+        };
+
+        // Load and initialize map
+        async function loadWorldMap() {
+            try {
+                const response = await fetch('https://unpkg.com/world-atlas@2/countries-110m.json');
+                const topology = await response.json();
+                
+                // Convert TopoJSON to GeoJSON
+                const countries = topojson.feature(topology, topology.objects.countries);
+                
+                // Get country code mapping
+                const countryCodesResponse = await fetch('https://unpkg.com/world-atlas@2/countries-50m.json');
+                const countryCodesData = await countryCodesResponse.json();
+                
+                // Create SVG
+                const width = 960;
+                const height = 500;
+                
+                const svg = d3.select('#map-wrapper')
+                    .append('svg')
+                    .attr('viewBox', `0 0 ${width} ${height}`)
+                    .attr('preserveAspectRatio', 'xMidYMid meet');
+                
+                const projection = d3.geoNaturalEarth1()
+                    .scale(170)
+                    .translate([width / 2, height / 2]);
+                
+                const path = d3.geoPath().projection(projection);
+                
+                // Create tooltip
+                const tooltip = document.createElement('div');
+                tooltip.className = 'map-tooltip';
+                document.body.appendChild(tooltip);
+                
+                // Draw countries
+                svg.selectAll('path')
+                    .data(countries.features)
+                    .enter()
+                    .append('path')
+                    .attr('d', path)
+                    .attr('class', d => {
+                        const code = getCountryCode(d.id);
+                        if (workCountries.includes(code)) return 'work-country';
+                        if (travelCountries.includes(code)) return 'travel-country';
+                        return '';
+                    })
+                    .attr('data-id', d => d.id)
+                    .on('mousemove', function(event, d) {
+                        const code = getCountryCode(d.id);
+                        const name = countryNames[code] || getCountryName(d.id);
+                        if (workCountries.includes(code) || travelCountries.includes(code)) {
+                            const type = workCountries.includes(code) ? 'work' : 'travel';
+                            const status = workCountries.includes(code) ? 'Work Authorization' : 'Business Travel';
+                            tooltip.className = `map-tooltip ${type}`;
+                            tooltip.innerHTML = `<strong>${name}</strong><br>${status}`;
+                            tooltip.style.display = 'block';
+                            tooltip.style.left = (event.clientX + 10) + 'px';
+                            tooltip.style.top = (event.clientY - 30) + 'px';
+                        }
+                    })
+                    .on('mouseout', function() {
+                        tooltip.style.display = 'none';
+                    });
+                    
+            } catch (error) {
+                console.log('Loading simplified map...');
+                loadSimplifiedMap();
+            }
+        }
+
+        // Country ID to ISO code mapping (ISO 3166-1 numeric to alpha-2)
+        const numericToAlpha2 = {
+            '004': 'AF', '008': 'AL', '012': 'DZ', '020': 'AD', '024': 'AO', '032': 'AR', '036': 'AU',
+            '040': 'AT', '050': 'BD', '056': 'BE', '076': 'BR', '100': 'BG', '124': 'CA', '152': 'CL',
+            '156': 'CN', '170': 'CO', '191': 'HR', '196': 'CY', '203': 'CZ', '208': 'DK', '818': 'EG',
+            '233': 'EE', '246': 'FI', '250': 'FR', '276': 'DE', '300': 'GR', '344': 'HK', '348': 'HU',
+            '352': 'IS', '356': 'IN', '360': 'ID', '372': 'IE', '376': 'IL', '380': 'IT', '392': 'JP',
+            '400': 'JO', '404': 'KE', '410': 'KR', '414': 'KW', '428': 'LV', '440': 'LT', '442': 'LU',
+            '458': 'MY', '470': 'MT', '484': 'MX', '504': 'MA', '528': 'NL', '554': 'NZ', '566': 'NG',
+            '578': 'NO', '586': 'PK', '604': 'PE', '608': 'PH', '616': 'PL', '620': 'PT', '634': 'QA',
+            '642': 'RO', '643': 'RU', '682': 'SA', '702': 'SG', '703': 'SK', '705': 'SI', '710': 'ZA',
+            '724': 'ES', '752': 'SE', '756': 'CH', '158': 'TW', '764': 'TH', '788': 'TN', '792': 'TR',
+            '804': 'UA', '784': 'AE', '826': 'GB', '840': 'US', '858': 'UY', '704': 'VN', '887': 'YE',
+            '834': 'TZ', '268': 'GE', '688': 'RS', '807': 'MK', '499': 'ME', '070': 'BA', '-99': 'XK',
+            '498': 'MD', '044': 'BS', '052': 'BB', '388': 'JM', '048': 'BH', '512': 'OM', '242': 'FJ',
+            '882': 'WS', '548': 'VU', '686': 'SN', '480': 'MU', '690': 'SC', '072': 'BW', '516': 'NA',
+            '646': 'RW', '858': 'UY', '218': 'EC', '600': 'PY', '068': 'BO', '591': 'PA', '188': 'CR',
+            '438': 'LI', '492': 'MC'
+        };
+
+        function getCountryCode(numericId) {
+            const padded = String(numericId).padStart(3, '0');
+            return numericToAlpha2[padded] || '';
+        }
+
+        function getCountryName(numericId) {
+            const code = getCountryCode(numericId);
+            return countryNames[code] || 'Unknown';
+        }
+
+        // Simplified fallback map
+        function loadSimplifiedMap() {
+            const mapWrapper = document.getElementById('map-wrapper');
+            mapWrapper.innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor" style="margin-bottom: 1rem; opacity: 0.5;">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    <p>Interactive map requires JavaScript libraries.</p>
+                    <p style="font-size: 0.9rem;">See the detailed list above for complete country coverage.</p>
+                </div>
+            `;
+        }
+
+        // Load D3.js and TopoJSON, then initialize map
+        function loadMapDependencies() {
+            const d3Script = document.createElement('script');
+            d3Script.src = 'https://d3js.org/d3.v7.min.js';
+            d3Script.onload = function() {
+                const topoScript = document.createElement('script');
+                topoScript.src = 'https://unpkg.com/topojson-client@3';
+                topoScript.onload = loadWorldMap;
+                topoScript.onerror = loadSimplifiedMap;
+                document.head.appendChild(topoScript);
+            };
+            d3Script.onerror = loadSimplifiedMap;
+            document.head.appendChild(d3Script);
+        }
+
+        // Initialize map when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadMapDependencies);
+        } else {
+            loadMapDependencies();
+        }
     </script>
 </body>
 </html>
