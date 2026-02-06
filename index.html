@@ -1067,6 +1067,48 @@
             border-left: 3px solid #f59e0b;
         }
 
+        .map-zoom-controls {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 10;
+        }
+
+        .zoom-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .zoom-btn:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .world-map-container {
+            position: relative;
+        }
+
+        .map-zoom-hint {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+        }
+
         @media (max-width: 768px) {
             .map-legend {
                 gap: 1rem;
@@ -1078,6 +1120,17 @@
             
             .world-map-container {
                 padding: 1rem;
+            }
+
+            .map-zoom-controls {
+                bottom: 0.5rem;
+                right: 0.5rem;
+            }
+
+            .zoom-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
             }
         }
 
@@ -1712,6 +1765,7 @@
             <div class="world-map-container fade-in">
                 <div id="map-wrapper"></div>
             </div>
+            <p class="map-zoom-hint fade-in">Scroll to zoom • Drag to pan • Use buttons for controls</p>
         </div>
     </section>
 
@@ -1820,6 +1874,7 @@
             'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', // EU 27
             'NO', 'IS', 'LI', // EEA
             'CH', 'MC', 'AD', // Switzerland, Monaco, Andorra
+            'GF', 'GP', 'MQ', 'RE', 'YT', // French Overseas (EU territories)
             'IN' // India
         ];
 
@@ -1840,7 +1895,9 @@
             'LV': 'Latvia', 'LT': 'Lithuania', 'LU': 'Luxembourg', 'MT': 'Malta', 'NL': 'Netherlands',
             'PL': 'Poland', 'PT': 'Portugal', 'RO': 'Romania', 'SK': 'Slovakia', 'SI': 'Slovenia',
             'ES': 'Spain', 'SE': 'Sweden', 'NO': 'Norway', 'IS': 'Iceland', 'LI': 'Liechtenstein',
-            'CH': 'Switzerland', 'MC': 'Monaco', 'AD': 'Andorra', 'IN': 'India',
+            'CH': 'Switzerland', 'MC': 'Monaco', 'AD': 'Andorra', 
+            'GF': 'French Guiana', 'GP': 'Guadeloupe', 'MQ': 'Martinique', 'RE': 'Réunion', 'YT': 'Mayotte',
+            'IN': 'India',
             'GB': 'United Kingdom', 'UA': 'Ukraine', 'GE': 'Georgia', 'RS': 'Serbia', 'AL': 'Albania',
             'MK': 'North Macedonia', 'ME': 'Montenegro', 'BA': 'Bosnia & Herzegovina', 'XK': 'Kosovo', 'MD': 'Moldova',
             'US': 'United States', 'CA': 'Canada', 'MX': 'Mexico', 'BR': 'Brazil', 'AR': 'Argentina',
@@ -1864,10 +1921,6 @@
                 // Convert TopoJSON to GeoJSON
                 const countries = topojson.feature(topology, topology.objects.countries);
                 
-                // Get country code mapping
-                const countryCodesResponse = await fetch('https://unpkg.com/world-atlas@2/countries-50m.json');
-                const countryCodesData = await countryCodesResponse.json();
-                
                 // Create SVG
                 const width = 960;
                 const height = 500;
@@ -1875,7 +1928,11 @@
                 const svg = d3.select('#map-wrapper')
                     .append('svg')
                     .attr('viewBox', `0 0 ${width} ${height}`)
-                    .attr('preserveAspectRatio', 'xMidYMid meet');
+                    .attr('preserveAspectRatio', 'xMidYMid meet')
+                    .style('cursor', 'grab');
+                
+                // Create a group for zoom
+                const g = svg.append('g');
                 
                 const projection = d3.geoNaturalEarth1()
                     .scale(170)
@@ -1883,13 +1940,43 @@
                 
                 const path = d3.geoPath().projection(projection);
                 
+                // Add zoom behavior
+                const zoom = d3.zoom()
+                    .scaleExtent([1, 8])
+                    .on('zoom', (event) => {
+                        g.attr('transform', event.transform);
+                        svg.style('cursor', event.transform.k > 1 ? 'grabbing' : 'grab');
+                    });
+                
+                svg.call(zoom);
+                
+                // Add zoom controls
+                const zoomControls = document.createElement('div');
+                zoomControls.className = 'map-zoom-controls';
+                zoomControls.innerHTML = `
+                    <button class="zoom-btn" id="zoom-in" title="Zoom In">+</button>
+                    <button class="zoom-btn" id="zoom-out" title="Zoom Out">−</button>
+                    <button class="zoom-btn" id="zoom-reset" title="Reset">⟲</button>
+                `;
+                document.querySelector('.world-map-container').appendChild(zoomControls);
+                
+                document.getElementById('zoom-in').addEventListener('click', () => {
+                    svg.transition().duration(300).call(zoom.scaleBy, 1.5);
+                });
+                document.getElementById('zoom-out').addEventListener('click', () => {
+                    svg.transition().duration(300).call(zoom.scaleBy, 0.67);
+                });
+                document.getElementById('zoom-reset').addEventListener('click', () => {
+                    svg.transition().duration(300).call(zoom.transform, d3.zoomIdentity);
+                });
+                
                 // Create tooltip
                 const tooltip = document.createElement('div');
                 tooltip.className = 'map-tooltip';
                 document.body.appendChild(tooltip);
                 
                 // Draw countries
-                svg.selectAll('path')
+                g.selectAll('path')
                     .data(countries.features)
                     .enter()
                     .append('path')
