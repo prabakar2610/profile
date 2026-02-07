@@ -758,6 +758,33 @@ section {
     fill: white;
 }
 
+.cert-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cert-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cert-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.3);
+    border-color: var(--accent);
+}
+
+.cert-link .cert-info h4 {
+    color: var(--text-primary);
+}
+
+.cert-link:hover .cert-info h4 {
+    color: var(--accent);
+}
+
 .cert-info h4 {
     font-size: 1rem;
     font-weight: 600;
